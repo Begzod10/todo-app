@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div>
+    <div class="todo">
+        <h1>Create Todo</h1>
+        <form action="{{ url_for('create_todo') }}" method="post">
+            <input type="text" name="todo" placeholder="todo name">
+            <input type="submit" value="Add">
+        </form>
+        <ul>
+            {% for td in todos %}
+            <li><a href="{{ url_for('get_id'),todo_id=td.id }}">{{ td.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="todo_list">
+        <h1>Todos</h1>
+        <ul>
+            <li>Lorem ipsum.</li>
+            <li>Dignissimos, fugit.</li>
+            <li>Aliquid, quibusdam.</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
